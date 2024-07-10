@@ -1,0 +1,30 @@
+#box{
+    color: rgb(203, 129, 203);
+    background-color: blue;
+    /* comment */
+}
+
+.heading{ /*or h1,h2,h3{}*/
+    color: red;
+}
+
+button{
+    background-color: green;
+}
+
+/* 
+selectors:
+    universal .{}
+    element h1{}
+    id #myId{}              .myid + enter creates a div with id myid
+    class .myClass{}        .myclass + enter creates a div with class myclass
+ 
+
+Properties:
+    color: pink/ rgb(128,0,128)/ #ff00ff(hex);   set color of foreground
+    background-color: black;
+
+
+    191,34,115 - hot pink
+    !!coolors : free website to generate color palettes 
+    */
