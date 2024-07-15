@@ -1,3 +1,30 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#navbar{
+    height: 60px;
+    background-color: #0f1111;
+    padding-right: 200px;
+    color: white;
+}
+
+button{
+    background-color: #f08804;
+}
+
+#logo {
+    color: #f08804;
+    font-size: 25px;
+}
+
+a{
+    margin-right: 200px;
+}
+
 #box{
     color: rgb(203, 129, 203);
     background-color: blue;
@@ -6,25 +33,113 @@
 
 .heading{ /*or h1,h2,h3{}*/
     color: red;
+    text-align:center;
+    text-transform: capitalize;
+    text-decoration: red dotted underline;
 }
 
-button{
-    background-color: green;
+.ps5{
+    height: 250px;
+    width: 200px;
+    background-image: url("puppy.jpeg");
+    background-size: cover;
+    position: fixed;
+    right: 10px;
 }
 
 /* 
+191,34,115 - hot pink
+!!coolors : free website to generate color palettes 
+
 selectors:
-    universal .{}
+    universal *{}
     element h1{}
-    id #myId{}              .myid + enter creates a div with id myid
+    id #myId{}              #myid + enter creates a div with id myid
     class .myClass{}        .myclass + enter creates a div with class myclass
  
+Units: 
+    Absolute: 96px=1inch 
+    Relative: 
+        20% (relative to parent object)/ 
+        em (relative to font size of parent if p-100px and ch->2em=200px for typographical property else eg width=5em means 5 times size of that element ka font size)
+        rem root em i.e. based on font size of root element
+        vh: relative to 1% of viewport height
+        vw: relative to 1% to viewport width
 
 Properties:
-    color: pink/ rgb(128,0,128)/ #ff00ff(hex);   set color of foreground
+    color: pink/ rgb(128,0,128)/ #ff00ff(hex)/ rgba(255,0,0,0.5) - alpha(opacity);   set color of foreground
     background-color: black;
 
+    text-align: center/start/left/right/end
+    text-decoration:underline/overline/line-through/none/ red wavy underline
+    font-weight: bold(400)/bolder/lighter/normal/100(lightest)-900(darkest)
+    font-family: arial/Times(default)/'Segoe UI', Tahoma, Geneva(fall back mechanism)
+    font-size: 16px(default for p)
+    line-height: 35px
+    text-transform: uppercase/lowercase/capitalize/none
 
-    191,34,115 - hot pink
-    !!coolors : free website to generate color palettes 
+    height: 100px (see with bkgd color)
+    width: 50px
+
+    border-width: 3px;
+    border-style: dashed/dotted/solid/double
+    border-color: brown;
+    border: 2px solid black;
+    border-radius: 10px/50%(circle)
+
+    margin(border(padding(content) ) )
+    padding: top right bottom left / 50px(all) 
+    margin: same as padding
+
+    display: block/inline/inlibe-block/ none(to remove from document flow without space being created for it)
+    when display is set to inline, margin and padding aren't applied at top or bottom
+    to overcome problem: use inline-block
+
+    visibility: hidden; (space is saved but element not shown)
+
+    background-image: url("catimage.jpg");  use unsplash.com (free liscense free images)
+    background-size: cover(no empty space)/ contain(fit, could repeat unless bkgd-repeat: no-repeat;)/ auto( default-not nice)
+    
+    position: 
+        static(default) top:50px/z index wont work
+        relative (to itself) top etc works, shift from where is was og supposed to be
+        absolute: relative to closest positioned(nonstatic ancestor) - removed from flow
+        fixed: relative to browser, removed from flow, doesnt move on scroll
+        sticky: based on user scoll pattern?
+
+        z index: decides stack level of elements +->utna upar i.e. 1 utop 0 utop -1
+
+    Flexbox: 1D layout method for arranging items in rows/columns
+        display: flex;
+        flex-direction: row(default)/ column/ row-reverse/ column-reverse
+        justify-content: flex-start/flex-end/center/space-around/space-between/space-evenly (align along main axis (vertical (|), hz align))
+        flex-wrap: nowrap/wrap/wrap-reverse
+        align-items: along cross axis (on container)
+        align-content: align space btw & around content across cross-axis
+
+        align-self: align individual ele along cross axis, max priority
+        flex-grow: grow relative to rest of flex items if space available
+        flex-shrink:  2 (shrink double amount se as compared to rest)/ 0(dont shrink)
+
+    Media queries: make website responsive
+    @media(width/min-width/max-width: 600px){ 
+        div{
+            background-color: red;
+        }
+    }
+    @media (min-width: 200px) and(max-width: 600px){}
+    */
+
+    /* Transitions: 
+    div{
+        transition-property:all;
+        transition-duration:2s;
+        transition-timing-function: linear/ease-in/out/steps(5)/cubic
+        transition-delay:1s;
+        transition:font-size(property name) 2s ease-in-out 0.2s;
+    }
+
+    div:hover{ //pseudoclass: active(clicked)/focus/focus-within/target/hover/visited/focus-visible
+        background-color:pink;
+    }
     */
