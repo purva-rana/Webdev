@@ -92,6 +92,9 @@ header a:hover {
     box-shadow: 0 0 5px #ccc;
     transition: transform 0.3s;
 }
+.projects a{
+    text-decoration: none;
+}
 .project:hover {
     transform: scale(1.05);
 }
