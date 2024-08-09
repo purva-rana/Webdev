@@ -84,14 +84,18 @@ header a:hover {
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
 .project {
     background: #f4f4f4;
     padding: 10px;
     margin: 10px;
-    flex-basis: 45%;
+    /* flex-basis: 30%; */
+    border: 1px solid #ddd;
+    box-sizing: border-box;
     box-shadow: 0 0 5px #ccc;
     transition: transform 0.3s;
 }
+
 .projects a{
     text-decoration: none;
 }
@@ -143,3 +147,29 @@ li{
     list-style-type: none;
     display: inline;
 } */
+
+@media (min-width: 1024px){
+    .project {
+        width: 30%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .project {
+        width: 40%;
+    }
+    #p3 {
+        width: 85%;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .project {
+        width: 80%;
+        margin: 10px auto;
+    }
+}
+
+
+

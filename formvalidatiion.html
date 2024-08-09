@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .contact-form {
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+            top: 150px;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 0 10px #ccc;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+        }
+        .contact-form button {
+            display: inline-block;
+            padding: 10px 20px;
+            border: none;
+            background: #77a6f7;
+            color: #fff;
+            cursor: pointer;
+            /* justify-self: center; */
+        }
+        error {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <section id="contact" class="section">
+        <h1>Register</h1>
+        <div class="contact-form ">
+            <form id="registrationForm" onsubmit="return formvalidate()">
+                <input type="text" id="username" placeholder="Your Username" required>
+                <span class="error" id="usernameError"></span>
+                <br>
+                <input type="text" id="phone" placeholder="Your Phone Number" required>
+                <span class="error" id="phoneError"></span>
+                <br>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <span class="error" id="emailError"></span>
+                <br>
+                <input type="password" id="password" placeholder="Your Password" required>
+                <span class="error" id="passwordError"></span>
+                <br>
+                <input type="password" id="confirmpassword" placeholder="Confirm Your Password" required>
+                <span class="error" id="confirmpasswordError"></span>
+                <br>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <h2 id="success"></h2>
+    </section>
+    <script>
+        function formvalidate(){
+            const username = document.getElementById('username').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmpassword = document.getElementById('confirmpassword').value;
+
+            const clearErrors = () => document.querySelectorAll('.error').forEach(el => el.innerHTML =" ");
+            const showError = (id,msg) =>document.getElementById(id).innerHTML = msg;
+            const phoneValidity= phone => /^\d{10}$/.test(phone);
+            const passwordValidity= password => /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$&])[A-Za-z\d@#$&]{7,}$/.test(password);
+
+            clearErrors();
+
+            let valid = true;
+
+            if (!passwordValidity(password)) {
+                showError('passwordError', 'Password must be at least 7 characters and contain at least one capital letter, one digit, and one special character from the set (&,$,#@)');
+                valid = false;
+            }
+            if (!phoneValidity(phone)) {
+                showError('phoneError', 'Enter a valid 10 digit phone number');
+                valid = false;
+            }
+            if (password !== confirmpassword) {
+                showError('confirmpasswordError', 'Passwords do not match');
+                valid = false;
+            }
+
+            if (valid) {
+                document.getElementById('success').innerHTML = "Registration Successful";
+                // Redirect or further processing
+                window.location.href = "index2.html";
+            }
+
+            return false; 
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      *{
+        position:relative;
+      }
+      button{
+        padding: 10px;
+        margin: 20px;
+      }
+      body{
+        background-color: rgb(142, 219, 223);
+      }
+      .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px;
+      }
+      #myForm {
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+            padding: 10px;
+            background: #fff;
+            box-shadow: 0 0 10px #ccc;
+      }
+      #myForm input, #myForm textarea {
+            width: 90%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+      }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $("#b4").click(function(){ 
+          alert("Background color =" + $("body").css("background-color")); 
+        });
+
+        let i = 2
+        $("#b5").click(function(){
+          i += 1;
+          $("ol").append("<li> List item " + i + "</li>")
+        });
+
+        $("#b6").click(function(){
+          i -= 1;
+          var list = document.getElementsByTagName('li');
+          var nodeToDelete = list[list.length -1];
+          nodeToDelete.parentNode.removeChild(nodeToDelete);
+        });
+
+        $("#b1").click(function(){
+          $(this).text("Style changed");
+        });
+
+  
+        $("#setBackgroundImageButton").click(function(){
+          $("body").css("background-image", "url('background.webp')");
+        });
+
+        $("#submitFormButton").click(function(){
+          var formData = {
+            name: $("#name").val(),
+            email: $("#email").val()
+          };
+          console.log(formData);
+        });
+        
+    
+        $("#addAttributeButton").click(function(){
+            $(".image").attr("width", "250px");
+        });
+
+
+      });
+
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+      <p id="demo">Hola Amigos</p>
+      <p id="p2">Well</p>
+    </div>
+    <div class="container">
+      
+      <img class="image" src="fetch/images/GitHub image.png" onclick="newimage()" width="200px">
+    
+
+      <h4>List: </h4>
+      <ol>
+        <li>List item 1</li>
+        <li>List item 2</li>
+      </ol>
+
+    </div>
+    
+    <div class="container">
+      <button id="setBackgroundImageButton"> Set Background Image </button>
+      <button id="addAttributeButton">Add Attribute</button>
+      <button id="b5">Append</button>
+      <button id="b6">Delete</button>
+    </div>
+
+    <div class="container">
+      <button id="b1" onclick="changestyle()">STYLE CHANGE</button>
+      <button onclick="addNode()">ADD TEXT</button>
+      <button onclick="deleteNode()">DELETE TEXT</button>
+      <button id="b4">Return background color</button>
+    </div>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <button type="button" id="submitFormButton">Submit Form</button>
+    </form>
+
+    
+
+    <script>
+
+        function addNode(){
+          var newParagraph = document.createElement('p');
+          var textNode = document.createTextNode('HOLaaaa');
+          newParagraph.appendChild(textNode);
+          document.body.appendChild(newParagraph); 
+        }
+        document.getElementsByTagName('p')[1].innerHTML = 'Welcome';
+
+        function changestyle(){
+          document.getElementById('demo').style.color = 'blue';
+        }
+
+        function newimage(){
+          document.getElementsByClassName("image")[0].src = 'puppy.jpeg';
+        }
+
+        function deleteNode(){
+          var nodeToDelete = document.getElementsByTagName('p')[2];
+          nodeToDelete.parentNode.removeChild(nodeToDelete);
+        }
+
+    </script>
+</body>
+</html>
+
+<!-- 
+Writing into an HTML element, using innerHTML.
+Writing into the HTML output using document.write().
+Writing into an alert box, using window.alert().
+Writing into the browser console, using console.log().
+
+object.method()-> innerHTML, attribute (new value), style.property, onclick=function(){}
+
+change content: document.getElementById("demo").innerHTML = "Hello JavaScript";
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light</button>
+document.getElementById("demo").style.fontSize = "35px";
+
+hide: document.getElementById("demo").style.display = "none";
+show: document.getElementById("demo").style.display = "block";
+
+<script src="myScript.js"></script> src can be full url also
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+
+<p>Never call document.write after the document has finished loading.
+It will overwrite the whole document.</p>
+<script>
+    document.write(5 + 6); -> should only be used for testing
+</script>
+
+window.alert(5 + 6); or alert(5 + 6);
+In JavaScript, the window object is the global scope object. This means that variables, properties, and methods by default belong to the window object. This also means that specifying the window keyword is optional:
+For debugging purposes, you can call the console.log(5+6) method in the browser to display data.
+
+
+<button onclick="window.print()">Print this page</button>
+
+let x, y, z;  // Statement 1
+x = 5;        // Statement 2
+y = 6;        // Statement 3
+z = x + y;    // Statement 4
+
+document.getElementById("demo").innerHTML =
+"The value of z is " + z + ".";
+
+x- cross platform
+a- apache
+m- mysql
+p- php
+p- pearl
+  -->

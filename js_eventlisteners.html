@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <h2>JavaScript addEventListener()</h2>
+        
+        <p>This example uses the addEventListener() method to attach a click event to a button.</p>
+        
+        <button id="Btn1" onclick="changetored()">Red</button>
+        <button id="Btn2">Green</button>
+
+        <hr>
+        <br>
+        <label > Number 1: </label>
+        <input id="num1" type="text" placeholder="Enter First Number">
+        <br>
+        <br>
+        <label > Number 2: </label>
+        <input id="num2" type="text" placeholder="Enter Second Number">
+        <br>
+        <br>
+        <button id="submit" onclick="gettext()"> Submit </button>
+        
+        <p id="displaytext"></p>
+
+        <hr>
+        
+        <table id="tableA">
+            <tr>Add new content</tr>
+            <tr> <input type="text" id="inputtext" placeholder="Enter text"> </tr>
+            <tr> <button id="tablebutton" > Click </button></tr>
+        </table>
+        
+        <script>
+
+        document.getElementById("Btn2").addEventListener("click", changetogreen);
+
+        function changetored() {
+            document.body.style.backgroundColor="red";
+        }
+
+        function changetogreen() {
+            document.body.style.backgroundColor="green";
+        }
+
+        function gettext() {
+            const n1 = parseFloat(document.getElementById('num1').value);
+            const n2 = parseFloat(document.getElementById('num2').value);
+            const result = n1+n2;
+            document.getElementById("displaytext").innerHTML = 'Sum of two numbers: ' + result;
+        }
+
+        document.getElementById('tablebutton').addEventListener('click', addcontent);
+        function addcontent(){
+            let x=document.getElementById('inputtext').value;
+            var y=document.getElementById('tableA');
+            var z=document.createElement("tr");
+            z.textContent=x;
+            y.appendChild(z);
+        
+                // let newRow = tableA.insertRow();
+                // let newCell = tableA.insertCell();
+                // cell.textContent =x;
+                // document.getElementById("inputtext").value="";
+         
+        }
+        </script>
+        
+
+</body>
+</html>
