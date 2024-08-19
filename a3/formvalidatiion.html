@@ -29,7 +29,7 @@
             cursor: pointer;
             /* justify-self: center; */
         }
-        error {
+        .error {
             color: red;
         }
         
@@ -62,31 +62,40 @@
     </section>
     <script>
         function formvalidate(){
-            const username = document.getElementById('username').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const confirmpassword = document.getElementById('confirmpassword').value;
+            const username = document.getElementById('username').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmpassword = document.getElementById('confirmpassword').value.trim();
 
-            const clearErrors = () => document.querySelectorAll('.error').forEach(el => el.innerHTML =" ");
+            const clearErrors = () => document.querySelectorAll('.error').forEach(el => el.innerHTML ="");
             const showError = (id,msg) =>document.getElementById(id).innerHTML = msg;
+
             const phoneValidity= phone => /^\d{10}$/.test(phone);
             const passwordValidity= password => /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$&])[A-Za-z\d@#$&]{7,}$/.test(password);
+            const emailValidity = email => /^[^\s@]+@[^\s@]+\.[^\s@]{2,3}$/.test(email);
 
             clearErrors();
 
             let valid = true;
-
+            if (username === "") {
+                showError('usernameError', '\nUsername cannot be empty');
+                valid = false;
+            }
             if (!passwordValidity(password)) {
-                showError('passwordError', 'Password must be at least 7 characters and contain at least one capital letter, one digit, and one special character from the set (&,$,#@)');
+                showError('passwordError', '\nPassword must be at least 7 characters and contain at least one capital letter, one digit, and one special character from the set (&,$,#@)');
+                valid = false;
+            }
+            if (!emailValidity(email)) {
+                showError('emailError', '\nEnter a valid email address');
                 valid = false;
             }
             if (!phoneValidity(phone)) {
-                showError('phoneError', 'Enter a valid 10 digit phone number');
+                showError('phoneError', '\nEnter a valid 10 digit phone number');
                 valid = false;
             }
             if (password !== confirmpassword) {
-                showError('confirmpasswordError', 'Passwords do not match');
+                showError('confirmpasswordError', '\nPasswords do not match');
                 valid = false;
             }
 

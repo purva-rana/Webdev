@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purva Rana - Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="portfoliostyle.css">
+    <style>
+
+    </style>
+</head>
+<body >
+    <header class="hero">
+        <div class="container">
+            <h1>Purva Rana</h1>
+            <p>Web Developer & Computer Science Engineer</p>
+            <a href="#projects" class="btn btn-primary mt-2">See My Work</a>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Purva's Portfolio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="container py-5">
+        <h2 class="py-5">About Me</h2>
+        <p style="line-height: 1.7;">
+            Hi!! I'm Purva Rana, a third-year B.Tech Computer SCience Engineering student with a passion for web development and software engineering. With strong proficiency in HTML, CSS, JavaScript, and backend technologies like PHP and MySQL, I create responsive, dynamic websites and applications. My experience extends to Python and embedded systems, where I enjoy tackling complex challenges and delivering innovative solutions. I'm driven by curiosity and a commitment to excellence, continually striving to push the boundaries of technology..</p>
+        
+    </section>
+
+    <section id="projects" class="container my-5">
+        <h2>Projects</h2>
+        <div class="row">
+            <div class="col-lg-6 project-card py-5">
+                <img src="pantry-pal.png" class="img-fluid" alt="Pantry Pal">
+                <h3 class="py-3">Pantry Pal</h3>
+                <p>A user-friendly web app designed to streamline pantry management, using HTML, CSS, PHP, and MySQL. It helps users track and organize their pantry items efficiently, ensuring nothing goes to waste.</p>
+            </div>
+            <div class="col-lg-6 project-card py-5">
+                <img src="galaxy.png" class="img-fluid" alt="Galaxy">
+                <h3  class="py-3">Galaxy</h3>
+                <p>An innovative game built using Python and Kivy, Galaxy takes players on a thrilling journey through space. The game features dynamic challenges and captivating graphics, making it an engaging experience for all.</p>
+            </div>
+            <div class="col-lg-6 project-card py-5">
+                <img src="RythmiQ.png" class="img-fluid" alt="RythmiQ">
+                <h3  class="py-3">RythmiQ</h3>
+                <p>An interactive desktop app built with Python, designed to generate custom music playlists based on user preferences. RythmiQ integrates seamlessly with the Spotify API to curate the perfect mix for any mood.</p>
+            </div>
+            <div class="col-lg-6 project-card py-5">
+                <img src="LEIS.png" class="img-fluid" alt="LEIS">
+                <h3 class="pt-3" >LEIS</h3>
+                <h5>Lab Equipment Issuance System</h5>
+                <p>A smart IoT solution for managing and tracking laboratory equipment. LEIS automates the issuance process, ensuring efficient inventory management and real-time updates on equipment availability.</p>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- style="background-color: #fcdddb;" background: no-repeat center/100% url(pink-pastel-sky-for-background.jpg);-->
+
+    <section id="contact-section" style=" background-color: #ffdfe6" >
+        <div class="container d-flex align-content-center " >
+            <div class="row justify-content-center py-5">
+                <div class="col-xl-5 col-lg-5 col-md-10 col-sm-10 p-5 align-content-center">
+                    <h3>CONTACT ME</h3>
+                    <p>Feel free to get in touch with me.</p>
+
+                    <p class="pt-3"><i class="fa-regular fa-envelope" style="color: #007bff;"></i> purvarana1617@gmail.com</p>
+            
+                    <p class="py-2"><i class="fa-solid fa-phone" style="color: #007bff;"></i> +91 7893747153</p>
+                
+                </div>
+                <div class="contact-form col-xl-6 col-lg-6 col-md-12 col-sm-12 align-content-center justify-content-start p-3">
+                    <form class="">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-10 col-sm-10">
+                                <div class="mb-3">
+                                    <label class="form-label">Your Name <span class="text-danger">*</span></label>
+                                    <input name="name" id="name" type="text" class="form-control" placeholder="Name " required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label class="form-label">Your Email <span class="text-danger">*</span></label>
+                                    <input name="email" id="email" type="email" class="form-control" placeholder="Email " required>
+                                </div> 
+                            </div>
+        
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Subject</label>
+                                    <input name="subject" id="subject" class="form-control" placeholder="Subject ">
+                                </div>
+                            </div>        
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label class="form-label">Message <span class="text-danger">*</span></label>
+                                    <textarea name="comments" id="comments" rows="4" class="form-control" placeholder="Message " required></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12 justify-content-center align-top pb-3">
+                                    <button type="submit" id="submit" name="send" class="btn btn-primary justify-self-center">Send</button>
+                            </div>
+                        </div>     
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Purva Rana. All Rights Reserved.</p>
+            <a href="https://www.linkedin.com/in/purva-rana-b231a0253" class="text-light">LinkedIn</a> | <a href="https://github.com/purva-rana" class="text-light">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
